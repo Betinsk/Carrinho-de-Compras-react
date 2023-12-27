@@ -1,0 +1,19 @@
+.header {
+    background-color: #fff159;
+    position: fixed;
+    width: 100%;
+}
+
+/* Este seletor seleciona a primeira div filho */
+.header > div {
+    display: flex;
+    justify-content: space-between; /* itens dentro do contêiner serão espaçados igualmente entre si e também nas extremidades do contêiner. */
+    align-items: center;
+    padding: 20px;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}

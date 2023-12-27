@@ -1,0 +1,35 @@
+
+.productCard {
+    width: 100%;
+    max-width: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.cardImage{
+    width: 100%;
+}
+
+.cardInfos {
+    padding: 25px;
+    border-top: 1px solid #ddd;
+}
+
+.cardPrice {
+    font-size: 30px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.cardTitle {
+    font-size: 15px;
+    color: rgba (0, 0, 0, 0.5);
+    line-height: 1.5;
+    font-weight: 500px;
+}
