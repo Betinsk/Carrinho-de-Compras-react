@@ -1,32 +1,32 @@
 import './productCard.css'
+import { BsFillCartPlusFill } from 'react-icons/bs'
+import propTypes from 'prop-types'
 
-function ProductCard(products) {
-        console.log(products)
+function ProductCard({ data }) {
+
+        console.log(data)
 
     return (
 
-        <section className='productCard'>
-            {
-                products.map((product) => {
-                    return (
-                        <>
-                            <p key={product.id}></p>
-                            <img className='cardImag' src={product.thumbnail}  alt="A descriptive text about"></img>
+        <section className="productCard">
 
-                            <div className='cardInfos'>
-                                <h2 className='cardPrice'>Rs 300</h2>
-                                <h2 className='cardTitle'>{product.title}</h2>
-                            </div>
+            <img className="cardImag" src={data.product.thumbnail} alt=""></img>
 
-                            <button type='button' className='buttonAddCart'>+</button>
+            <div className="cardInfos">
+                <h2 className='cardPrice'>{data.product.price}</h2>
+                <h2 className='cardTitle'>{data.product.title}</h2>
+            </div>
 
-                        </>
-                    )
-                })
-            }
+            <button type='button' className='buttonAddCart'>+</button>
+            <BsFillCartPlusFill />
+
         </section>
 
     )
 }
 
 export default ProductCard
+
+ProductCard.propTypes = {
+    data: propTypes.shape({}),
+}.isRequired;

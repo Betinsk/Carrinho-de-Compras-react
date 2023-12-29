@@ -10,14 +10,18 @@ function Products () {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetchProducts('piano').then((response) => {
+        fetchProducts('iphone').then((response) => {
             setProducts(response)
         })
     }, [])
 
     return (
         <section className='products container'>
-            <ProductCard value={products}/>
+            
+            {
+                products.map((product) => <ProductCard key={product.id} data={{product}} />)
+            }
+
         </section>
     )
 }
