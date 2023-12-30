@@ -1,11 +1,23 @@
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import './cartButton.css'
+import { useContext } from 'react'
+import appContext from '../../context/appContext'
 
 function CartButton () {
+
+    const {cartItens, isCartVisible, setCartVisible} = useContext(appContext)
+
+
     return (
-        <button type='button' className = 'cartButton' >
+        <button type='button' className = 'cartButton'
+            onClick={() => setCartVisible(!isCartVisible)} >
+            
             <AiOutlineShoppingCart />
-            <span className='cartStatus'>1</span>
+
+            { cartItens.length > 0  && 
+            <span className='cartStatus'>{cartItens.length}</span>
+        }
+       
         </button>
     )
 }

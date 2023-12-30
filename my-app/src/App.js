@@ -1,14 +1,17 @@
 import './App.css';
+import Cart from './components/cart/cart';
 import Header from './components/header/header';
 import Products from './components/products/products';
+import Provider from './context/provider';
 
 function App() {
   return (
-    <div className="">
+    <Provider className="">
       <Header/>
 
       <Products />
-    </div>
+      <Cart/>
+    </Provider>
   );
 }
 

@@ -1,28 +1,33 @@
 
 import fetchProducts from '../../api/fetchProducts'
+import Loading from '../loading/loading'
 import ProductCard from '../productCard/productCard'
 import './products.css'
-import { useState, useEffect } from 'react'
+import { useEffect, useContext } from 'react'
+import appContext from '../../context/appContext'
 
 function Products () {
 
+    const {products, setProducts, loading, setLoading } = useContext(appContext)
 
-    const [products, setProducts] = useState([])
 
     useEffect(() => {
         fetchProducts('iphone').then((response) => {
             setProducts(response)
+            setLoading(false)
         })
     }, [])
 
     return (
-        <section className='products container'>
-            
+
+        (loading &&  <Loading/> )  || (
+            <section className='products container'>
             {
                 products.map((product) => <ProductCard key={product.id} data={{product}} />)
             }
-
-        </section>
+       </section> 
+        )
+       
     )
 }
 
